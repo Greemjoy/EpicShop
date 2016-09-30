@@ -25,8 +25,11 @@ namespace WebUI.Infrastructure
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
             mock.Setup(m => m.Products).Returns(new List<Product>
             {
-                new Product {Name = "qwer", Author = "1234", Price = 25}
+                new Product {Name = "Fender", Author = "test", Price = 25},
+                new Product {Name = "Trash", Author = "test2", Price = 300},
+                new Product {Name = "qwer", Author = "test3", Price = 155},
             });
+            kernel.Bind<IProductRepository>().ToConstant(mock.Object);
         }
 
         public object GetService(Type serviceType)
