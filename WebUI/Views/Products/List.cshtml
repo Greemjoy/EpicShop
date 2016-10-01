@@ -8,9 +8,9 @@
 @foreach (Product product in Model)
 {
     <div>
-        <h3>@product.Name</h3>
-        <p>@product.Author</p>
-        <h4>@product.Price.ToString("# $")</h4>
+        <h3>@product.Name - @product.Author</h3>
+        <p>@product.Description</p>
+        <h4>@product.Price.ToString("# USD")</h4>
     </div>
     <hr />
 }
