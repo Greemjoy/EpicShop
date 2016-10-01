@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Domain.Abstract;
 using Domain.Entities;
+using Domain.Concrete;
 
 namespace WebUI.Infrastructure
 {
@@ -22,14 +23,7 @@ namespace WebUI.Infrastructure
 
         private void AddBindings()
         {
-            Mock<IProductRepository> mock = new Mock<IProductRepository>();
-            mock.Setup(m => m.Products).Returns(new List<Product>
-            {
-                new Product {Name = "Fender", Author = "test", Price = 25},
-                new Product {Name = "Trash", Author = "test2", Price = 300},
-                new Product {Name = "qwer", Author = "test3", Price = 155},
-            });
-            kernel.Bind<IProductRepository>().ToConstant(mock.Object);
+            kernel.Bind<IProductRepository>().To<EFProductRepository>();
         }
 
         public object GetService(Type serviceType)
