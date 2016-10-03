@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60046538-077C-4596-8449-788FD52FF923}</ProjectGuid>
+    <ProjectGuid>{542238B7-61F3-438C-8A14-C40787357595}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTests</RootNamespace>
@@ -114,11 +114,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{aaa5e65f-39af-4f1e-bb28-63fb108482de}</Project>
+      <Project>{aea8198f-a07e-4e38-aece-57bdd0374f51}</Project>
       <Name>Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebUI\WebUI.csproj">
-      <Project>{e9dc92b2-83b8-4650-ace6-c3cc70fa5e97}</Project>
+      <Project>{042820f8-85ae-429b-8ec7-9ff0bd5785dd}</Project>
       <Name>WebUI</Name>
     </ProjectReference>
   </ItemGroup>

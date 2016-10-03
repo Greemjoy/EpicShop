@@ -47,3 +47,7 @@ C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\bin\Debug
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\bin\Debug\Microsoft.ApplicationInsights.dll
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\bin\Debug\Microsoft.ApplicationInsights.xml
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\UnitTests\bin\Debug\EntityFramework.xml

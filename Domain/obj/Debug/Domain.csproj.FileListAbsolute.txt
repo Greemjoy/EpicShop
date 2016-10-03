@@ -13,6 +13,10 @@ C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\Sy
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\System.Web.WebPages.xml
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\obj\Debug\Domain.dll
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\obj\Debug\Domain.pdb
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\Domain.dll.config
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\EntityFramework.dll
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\EntityFramework.xml
+C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\EntityFramework.SqlServer.xml
