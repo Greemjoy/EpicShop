@@ -1,11 +1,11 @@
-﻿@using Domain.Entities
-@model IEnumerable<Guitar>
+﻿@using WebUI.Models
+@model GuitarsListViewModel
 
 @{
     ViewBag.Title = "Guitars";
 }
 
-@foreach (Guitar guitar in Model)
+@foreach (var guitar in Model.Guitars)
 {
     <div>
         <h3>@guitar.Name - @guitar.Author</h3>
@@ -15,3 +15,7 @@
     <hr />
 }
 
+<div>
+    @Html.PageLinks(Model.PagingInfo, x=> Url.Action("List", new { page = x}))
+</div>
+ 
