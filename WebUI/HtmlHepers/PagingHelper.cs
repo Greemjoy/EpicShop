@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebUI.Models;
 
-namespace WebUI.HtmlHepers
+namespace WebUI.HtmlHelpers
 {
     public static class PagingHelper
     {

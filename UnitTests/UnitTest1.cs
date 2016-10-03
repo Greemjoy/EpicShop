@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using WebUI.Models;
-using WebUI.HtmlHepers;
+using WebUI.HtmlHelpers;
 
 namespace UnitTests
 {
