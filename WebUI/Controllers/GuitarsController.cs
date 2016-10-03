@@ -10,13 +10,17 @@ namespace WebUI.Controllers
     public class GuitarsController : Controller
     {
         private IGuitarRepository repository;
+        public int pageSize = 4;
         public  GuitarsController(IGuitarRepository repo)
         {
             repository = repo;
         }
-        public ViewResult List()
+        public ViewResult List(int page = 1)
         {
-            return View(repository.Guitars);
+            return View(repository.Guitars
+                .OrderBy(guitar => guitar.GuitarId)
+                .Skip((page - 1)*pageSize)
+                .Take(pageSize));
         }
     }
 }
