@@ -20,3 +20,26 @@ C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\En
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\EntityFramework.xml
 C:\Users\Gref\documents\visual studio 2015\Projects\EpicShop\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\Domain.dll.config
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\Domain.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\Domain.pdb
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\EntityFramework.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\EntityFramework.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\obj\Debug\Domain.dll
+C:\Users\Gref\Documents\GitHub\EpicShop\Domain\obj\Debug\Domain.pdb
