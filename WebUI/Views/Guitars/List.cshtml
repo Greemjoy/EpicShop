@@ -8,27 +8,7 @@
 @foreach (var guitar in Model.Guitars)
 {
 
-    <div class="well">
-        <div class="row">
-            <div class="col-xs-10">
-                <h3>
-                    <strong>@guitar.Name</strong>
-                </h3>
-                <h4>
-                    <strong>@guitar.Author</strong>
-                </h4>
-            </div>
-
-            <div class="col-xs-2">
-                <h3>
-                    <strong class="pull-right label label-primary">
-                        @guitar.Price.ToString("# USD")
-                    </strong>
-                </h3>
-            </div>
-        </div>
-        <span class="lead">@guitar.Description</span>
-    </div>
+    @Html.Partial("_GuitarSummary", guitar)
 
 }
 
