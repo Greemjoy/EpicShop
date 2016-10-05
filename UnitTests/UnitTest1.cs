@@ -31,7 +31,7 @@ namespace UnitTests
             GuitarsController controller = new GuitarsController(mock.Object);
             controller.pageSize = 3;
 
-            GuitarsListViewModel result = (GuitarsListViewModel)controller.List(2).Model;
+            GuitarsListViewModel result = (GuitarsListViewModel)controller.List(null,2).Model;
             List<Guitar> guitars = result.Guitars.ToList();
             Assert.IsTrue(guitars.Count == 2);
             Assert.AreEqual(guitars[0].Name, "Guitar4");
@@ -75,7 +75,7 @@ namespace UnitTests
             GuitarsController controller = new GuitarsController(mock.Object);
             controller.pageSize = 3;
 
-            GuitarsListViewModel result = (GuitarsListViewModel)controller.List(2).Model;
+            GuitarsListViewModel result = (GuitarsListViewModel)controller.List(null, 2).Model;
 
             PagingInfo pagingInfo = result.PagingInfo;
             Assert.AreEqual(pagingInfo.CurrentPage, 2);
@@ -84,6 +84,28 @@ namespace UnitTests
             Assert.AreEqual(pagingInfo.TotalPages, 2);
         }
 
+        [TestMethod]
+        public void Can_Filter_Guitars()
+        {
+            Mock<IGuitarRepository> mock = new Mock<IGuitarRepository>();
+            mock.Setup(m => m.Guitars).Returns(new List<Guitar>
+            {
+                new Guitar {GuitarId = 1,Name = "Guitar1", Type ="Type1" },
+                new Guitar {GuitarId = 2,Name = "Guitar2", Type ="Type2" },
+                new Guitar {GuitarId = 3,Name = "Guitar3", Type ="Type1" },
+                new Guitar {GuitarId = 4,Name = "Guitar4", Type ="Type3" },
+                new Guitar {GuitarId = 5,Name = "Guitar5", Type ="Type2" },
+            });
+
+            GuitarsController controller = new GuitarsController(mock.Object);
+            controller.pageSize = 3;
+
+            List<Guitar> result = ((GuitarsListViewModel)controller.List("Type2", 1).Model).Guitars.ToList();
+
+            Assert.AreEqual(result.Count(), 2);
+            Assert.IsTrue(result[0].Name == "Guitar2" && result[0].Type == "Type2");
+            Assert.IsTrue(result[1].Name == "Guitar5" && result[1].Type == "Type2");
+        }
 
     }
 }
