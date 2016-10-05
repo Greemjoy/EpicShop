@@ -7,15 +7,32 @@
 
 @foreach (var guitar in Model.Guitars)
 {
-    <div>
-        <h3>@guitar.Name - @guitar.Author</h3>
-        <p>@guitar.Description</p>
-        <h4>@guitar.Price.ToString("# USD")</h4>
+
+    <div class="well">
+        <div class="row">
+            <div class="col-xs-10">
+                <h3>
+                    <strong>@guitar.Name</strong>
+                </h3>
+                <h4>
+                    <strong>@guitar.Author</strong>
+                </h4>
+            </div>
+
+            <div class="col-xs-2">
+                <h3>
+                    <strong class="pull-right label label-primary">
+                        @guitar.Price.ToString("# USD")
+                    </strong>
+                </h3>
+            </div>
+        </div>
+        <span class="lead">@guitar.Description</span>
     </div>
-    <hr />
+
 }
 
-<div>
+<div class="btn-group pull-right">
     @Html.PageLinks(Model.PagingInfo, x=> Url.Action("List", new { page = x}))
 </div>
  
