@@ -16,11 +16,12 @@ namespace WebUI.Controllers
         {
             repository = repo;
         }
-        public ViewResult List(int page = 1)
+        public ViewResult List( string type, int page = 1)
         {
             GuitarsListViewModel model = new GuitarsListViewModel
             {
                 Guitars = repository.Guitars
+                .Where(b => type == null || b.Type == type)
                 .OrderBy(guitar => guitar.GuitarId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize),
@@ -29,7 +30,8 @@ namespace WebUI.Controllers
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
                     TotalItems = repository.Guitars.Count()
-                }
+                },
+                CurrentType = type
         };
             return View(model);
         }

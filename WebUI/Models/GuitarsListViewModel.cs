@@ -10,5 +10,6 @@ namespace WebUI.Models
     {
         public IEnumerable<Guitar> Guitars { get; set; }
         public PagingInfo PagingInfo{ get; set; }
+        public string CurrentType { get; set; }
     }
 }
