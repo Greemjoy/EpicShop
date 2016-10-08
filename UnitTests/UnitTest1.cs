@@ -107,5 +107,29 @@ namespace UnitTests
             Assert.IsTrue(result[1].Name == "Guitar5" && result[1].Type == "Type2");
         }
 
+        [TestMethod]
+        public void Can_Create_Categories()
+        {
+            Mock<IGuitarRepository> mock = new Mock<IGuitarRepository>();
+            mock.Setup(m => m.Guitars).Returns(new List<Guitar>
+            {
+                new Guitar {GuitarId = 1,Name = "Guitar1", Type ="Type1" },
+                new Guitar {GuitarId = 2,Name = "Guitar2", Type ="Type2" },
+                new Guitar {GuitarId = 3,Name = "Guitar3", Type ="Type1" },
+                new Guitar {GuitarId = 4,Name = "Guitar4", Type ="Type3" },
+                new Guitar {GuitarId = 5,Name = "Guitar5", Type ="Type2" },
+            });
+
+            NavController target = new NavController(mock.Object);
+
+            List<string> result = ((IEnumerable<string>)target.Menu().Model).ToList();
+
+            Assert.AreEqual(result.Count(), 3);
+            Assert.AreEqual(result[0], "Type1");
+            Assert.AreEqual(result[1], "Type2");
+            Assert.AreEqual(result[2], "Type3");
+        }
+
+
     }
 }
