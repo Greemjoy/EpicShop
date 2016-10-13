@@ -29,7 +29,9 @@ namespace WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = repository.Guitars.Count()
+                    TotalItems = type == null ?
+                        repository.Guitars.Count() :
+                        repository.Guitars.Where(guitar => guitar.Type == type).Count()
                 },
                 CurrentType = type
         };
