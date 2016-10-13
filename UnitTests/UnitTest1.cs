@@ -130,6 +130,27 @@ namespace UnitTests
             Assert.AreEqual(result[2], "Type3");
         }
 
+        public void Indicates_Selected_Type()
+        {
+            Mock<IGuitarRepository> mock = new Mock<IGuitarRepository>();
+            mock.Setup(m => m.Guitars).Returns(new List<Guitar>
+            {
+                new Guitar {GuitarId = 1,Name = "Guitar1", Type ="Type1" },
+                new Guitar {GuitarId = 2,Name = "Guitar2", Type ="Type2" },
+                new Guitar {GuitarId = 3,Name = "Guitar3", Type ="Type1" },
+                new Guitar {GuitarId = 4,Name = "Guitar4", Type ="Type3" },
+                new Guitar {GuitarId = 5,Name = "Guitar5", Type ="Type2" },
+            });
+
+            NavController target = new NavController(mock.Object);
+
+            string typeToSelect = "Type2";
+
+            string result = target.Menu(typeToSelect).ViewBag.SelectedGenre;
+
+            Assert.AreEqual(typeToSelect, result);
+        }
+
 
     }
 }
