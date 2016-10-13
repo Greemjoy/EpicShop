@@ -14,8 +14,9 @@ namespace WebUI.Controllers
         {
             repository = repo;
         }
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(string type = null)
         {
+            ViewBag.SelectType = type;
             IEnumerable<string> types = repository.Guitars
                 .Select(guitar => guitar.Type)
                 .Distinct()
