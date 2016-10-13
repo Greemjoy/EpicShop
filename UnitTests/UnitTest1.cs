@@ -150,7 +150,32 @@ namespace UnitTests
 
             Assert.AreEqual(typeToSelect, result);
         }
+   
+        public void Generate_Type_Specific_Guitar_Count()
+        {
+            Mock<IGuitarRepository> mock = new Mock<IGuitarRepository>();
+            mock.Setup(m => m.Guitars).Returns(new List<Guitar>
+            {
+                new Guitar {GuitarId = 1,Name = "Guitar1", Type ="Type1" },
+                new Guitar {GuitarId = 2,Name = "Guitar2", Type ="Type2" },
+                new Guitar {GuitarId = 3,Name = "Guitar3", Type ="Type1" },
+                new Guitar {GuitarId = 4,Name = "Guitar4", Type ="Type3" },
+                new Guitar {GuitarId = 5,Name = "Guitar5", Type ="Type2" },
+            });
 
+            GuitarsController controller = new GuitarsController(mock.Object);
+            controller.pageSize = 3;
+
+            int res1 = ((GuitarsListViewModel)controller.List("Type1").Model).PagingInfo.TotalItems;
+            int res2 = ((GuitarsListViewModel)controller.List("Type2").Model).PagingInfo.TotalItems;
+            int res3 = ((GuitarsListViewModel)controller.List("Type3").Model).PagingInfo.TotalItems;
+            int resAll = ((GuitarsListViewModel)controller.List(null).Model).PagingInfo.TotalItems;
+
+            Assert.AreEqual(res1, 2);
+            Assert.AreEqual(res2, 2);
+            Assert.AreEqual(res3, 1);
+            Assert.AreEqual(resAll, 5);
+        }
 
     }
 }
