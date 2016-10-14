@@ -61,5 +61,20 @@ namespace UnitTests
             Assert.AreEqual(cart.Lines.Where(c => c.Guitar == guitar2).Count(), 0);
             Assert.AreEqual(cart.Lines.Count(), 2);
         }
+        [TestMethod]
+        public void Calculate_Cart_Total()
+        {
+            Guitar guitar1 = new Guitar { GuitarId = 1, Name = "Guitar1", Price = 100   };
+            Guitar guitar2 = new Guitar { GuitarId = 2, Name = "Guitar2" ,Price = 55    };
+
+            Cart cart = new Cart();
+
+            cart.AddItem(guitar1, 1);
+            cart.AddItem(guitar2, 1);
+            cart.AddItem(guitar1, 5);
+            decimal result = cart.ComputeTotalValue();
+
+            Assert.AreEqual(result, 655);
+        }
     }
 }
