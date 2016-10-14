@@ -43,5 +43,23 @@ namespace UnitTests
             Assert.AreEqual(results[0].Quantity, 6);
             Assert.AreEqual(results[1].Quantity, 1);
         }
+        [TestMethod]
+        public void Can_Remove_Lines()
+        {
+            Guitar guitar1 = new Guitar { GuitarId = 1, Name = "Guitar1" };
+            Guitar guitar2 = new Guitar { GuitarId = 2, Name = "Guitar2" };
+            Guitar guitar3 = new Guitar { GuitarId = 3, Name = "Guitar3" };
+
+            Cart cart = new Cart();
+
+            cart.AddItem(guitar1, 1);
+            cart.AddItem(guitar2, 1);
+            cart.AddItem(guitar1, 5);
+            cart.AddItem(guitar3, 2);
+            cart.RemoveLine(guitar2);
+
+            Assert.AreEqual(cart.Lines.Where(c => c.Guitar == guitar2).Count(), 0);
+            Assert.AreEqual(cart.Lines.Count(), 2);
+        }
     }
 }
