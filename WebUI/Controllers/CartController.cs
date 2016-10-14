@@ -17,19 +17,20 @@ namespace WebUI.Controllers
             repository = repo;
         }
 
-        public ViewResult Index(string returUrl)
+        public ViewResult Index(string returnUrl)
         {
             return View(new CartIndexViewModel
             {
                 Cart = GetCart(),
-                ReturnUrl = returUrl;
+                ReturnUrl = returnUrl
             });
         }
+        
 
         public Cart GetCart()
         {
             Cart cart = (Cart)Session["Cart"];
-            if(cart == null)
+            if (cart == null)
             {
                 cart = new Cart();
                 Session["Cart"] = cart;
@@ -41,8 +42,8 @@ namespace WebUI.Controllers
         {
             Guitar guitar = repository.Guitars
                 .FirstOrDefault(b => b.GuitarId == guitarId);
-            
-            if(guitar != null)
+
+            if (guitar != null)
             {
                 GetCart().AddItem(guitar, 1);
             }
