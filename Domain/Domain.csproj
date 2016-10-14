@@ -80,6 +80,7 @@
     <Compile Include="Abstract\IGuitarRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFGuitarRepository.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Guitar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

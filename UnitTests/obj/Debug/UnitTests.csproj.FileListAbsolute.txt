@@ -69,7 +69,6 @@ C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\UnitTests.dll
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\UnitTests.pdb
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Castle.Core.dll
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Domain.dll
-C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Moq.dll
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Ninject.dll
@@ -98,7 +97,6 @@ C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\System.Web.Razor.xml
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\System.Web.WebPages.xml
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\EntityFramework.xml
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\bin\Debug\Microsoft.ApplicationInsights.xml
 C:\Users\Gref\Documents\GitHub\EpicShop\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
