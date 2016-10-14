@@ -76,5 +76,20 @@ namespace UnitTests
 
             Assert.AreEqual(result, 655);
         }
+        [TestMethod]
+        public void Can_Clear_Contents()
+        {
+            Guitar guitar1 = new Guitar { GuitarId = 1, Name = "Guitar1", Price = 100 };
+            Guitar guitar2 = new Guitar { GuitarId = 2, Name = "Guitar2", Price = 55 };
+
+            Cart cart = new Cart();
+
+            cart.AddItem(guitar1, 1);
+            cart.AddItem(guitar2, 1);
+            cart.AddItem(guitar1, 5);
+            cart.Clear();
+
+            Assert.AreEqual(cart.Lines.Count(), 0);
+        }
     }
 }
