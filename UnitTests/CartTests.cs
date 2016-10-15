@@ -7,6 +7,7 @@ using Domain.Abstract;
 using Moq;
 using WebUI.Controllers;
 using System.Web.Mvc;
+using WebUI.Models;
 
 namespace UnitTests
 {
@@ -111,6 +112,7 @@ namespace UnitTests
             Assert.AreEqual(cart.Lines.Count(), 1);
             Assert.AreEqual(cart.Lines.ToList()[0].Guitar.GuitarId, 1);
         }
+        [TestMethod]
         public void Adding_Guitar_To_Cart_Goes_To_Cart_Screen()
         {
             Mock<IGuitarRepository> mock = new Mock<IGuitarRepository>();
@@ -125,6 +127,17 @@ namespace UnitTests
 
             Assert.AreEqual(result.RouteValues["action"], "Index");
             Assert.AreEqual(result.RouteValues["returnUrl"], "myUrl");
+        }
+        [TestMethod]
+        public void Can_View_Cart_Contents()
+        {
+            Cart cart = new Cart();
+            CartController target = new CartController(null);
+
+            CartIndexViewModel result = (CartIndexViewModel)target.Index(cart, "myUrl").ViewData.Model;
+
+            Assert.AreSame(result.Cart, cart);
+            Assert.AreEqual(result.ReturnUrl, "myUrl");
         }
     }
 }
