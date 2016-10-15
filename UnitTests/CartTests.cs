@@ -3,6 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain.Entities;
 using System.Linq;
 using System.Collections.Generic;
+using Domain.Abstract;
+using Moq;
+using WebUI.Controllers;
 
 namespace UnitTests
 {
@@ -90,6 +93,22 @@ namespace UnitTests
             cart.Clear();
 
             Assert.AreEqual(cart.Lines.Count(), 0);
+        }
+        [TestMethod]
+        public void Can_Add_To_Cart()
+        {
+            Mock<IGuitarRepository> mock = new Mock<IGuitarRepository>();
+            mock.Setup(m => m.Guitars).Returns(new List<Guitar> {
+                new Guitar {GuitarId = 1, Name = "Guitar1", Type = "Type1"}
+            }.AsQueryable());
+
+            Cart cart = new Cart();
+            CartController controller = new CartController(mock.Object);
+
+            controller.AddToCart(cart, 1, null);
+
+            Assert.AreEqual(cart.Lines.Count(), 1);
+            Assert.AreEqual(cart.Lines.ToList()[0].Guitar.GuitarId, 1);
         }
     }
 }
