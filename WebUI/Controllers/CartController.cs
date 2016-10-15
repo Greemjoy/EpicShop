@@ -17,48 +17,36 @@ namespace WebUI.Controllers
             repository = repo;
         }
 
-        public ViewResult Index(string returnUrl)
+        public ViewResult Index(Cart cart, string returnUrl)
         {
             return View(new CartIndexViewModel
             {
-                Cart = GetCart(),
+                Cart = cart,
                 ReturnUrl = returnUrl
             });
         }
-        
 
-        public Cart GetCart()
-        {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new Cart();
-                Session["Cart"] = cart;
-            }
-            return cart;
-        }
-
-        public RedirectToRouteResult AddToCart(int guitarId, string returnUrl)
+        public RedirectToRouteResult AddToCart(Cart cart,int guitarId, string returnUrl)
         {
             Guitar guitar = repository.Guitars
                 .FirstOrDefault(b => b.GuitarId == guitarId);
 
             if (guitar != null)
             {
-                GetCart().AddItem(guitar, 1);
+                cart.AddItem(guitar, 1);
             }
 
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public RedirectToRouteResult RemoveFromCart(int guitarId, string returnUrl)
+        public RedirectToRouteResult RemoveFromCart(Cart cart, int guitarId, string returnUrl)
         {
             Guitar guitar = repository.Guitars
                 .FirstOrDefault(b => b.GuitarId == guitarId);
 
             if (guitar != null)
             {
-                GetCart().RemoveLine(guitar);
+                cart.RemoveLine(guitar);
             }
 
             return RedirectToAction("Index", new { returnUrl });
