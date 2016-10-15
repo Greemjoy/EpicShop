@@ -1,0 +1,59 @@
+﻿@model Domain.Entities.ShippingDetails
+
+@{
+    ViewBag.Title = "Epic Shop: Order form";
+}
+
+<h2>Checkout</h2>
+<p>Please, enter your contact information</p>
+
+@using (Html.BeginForm())
+{
+    <h3>Contact information</h3>
+    <div class="form-group">
+        <label> Your name:</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control"})
+    </div>
+
+     <h3>Delivery address</h3>
+        <div class="form-group">
+            <label> First address:</label>
+            @Html.TextBoxFor(x => x.Line1, new { @class = "form-control" })
+        </div>
+
+        <h3>Delivery address</h3>
+        <div class="form-group">
+            <label> Second address:</label>
+            @Html.TextBoxFor(x => x.Line2, new { @class = "form-control" })
+        </div>
+
+        <h3>Delivery address</h3>
+        <div class="form-group">
+            <label> Third address:</label>
+            @Html.TextBoxFor(x => x.Line3, new { @class = "form-control" })
+        </div>
+
+        <h3>Delivery address</h3>
+        <div class="form-group">
+            <label> City</label>
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+        </div>
+
+        <h3>Delivery address</h3>
+        <div class="form-group">
+            <label> Country</label>
+            @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+        </div>
+
+        <h3>Options</h3>
+        <div class="form-group">
+            <label> 
+                @Html.EditorFor(x => x.GiftWrap)
+               Use the gift box?
+            </label>
+        </div>
+
+        <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Checkout order"/>
+        </div>
+}
