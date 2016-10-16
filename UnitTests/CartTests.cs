@@ -105,7 +105,7 @@ namespace UnitTests
             }.AsQueryable());
 
             Cart cart = new Cart();
-            CartController controller = new CartController(mock.Object);
+            CartController controller = new CartController(mock.Object, null);
 
             controller.AddToCart(cart, 1, null);
 
@@ -121,7 +121,7 @@ namespace UnitTests
             }.AsQueryable());
 
             Cart cart = new Cart();
-            CartController controller = new CartController(mock.Object);
+            CartController controller = new CartController(mock.Object, null);
 
             RedirectToRouteResult result = controller.AddToCart(cart, 2, "myUrl");
 
@@ -132,12 +132,30 @@ namespace UnitTests
         public void Can_View_Cart_Contents()
         {
             Cart cart = new Cart();
-            CartController target = new CartController(null);
+            CartController target = new CartController(null, null);
 
             CartIndexViewModel result = (CartIndexViewModel)target.Index(cart, "myUrl").ViewData.Model;
 
             Assert.AreSame(result.Cart, cart);
             Assert.AreEqual(result.ReturnUrl, "myUrl");
         }
+
+        [TestMethod]
+        public void Connot_Checkout_Empty_Cart()
+        {
+            Mock<IOrderProcessor> mock = new Mock<IOrderProcessor>();
+            Cart cart = new Cart();
+            ShippingDetails shippingDetails = new ShippingDetails();
+
+            CartController controller = new CartController(null, mock.Object);
+
+            ViewResult result = controller.Checkout(cart, shippingDetails);
+
+            mock.Verify(m => m.ProcessOrder(It.IsAny<Cart>(), It.IsAny<ShippingDetails>()), Times.Never());
+
+            Assert.AreEqual("", result.ViewName);
+            Assert.AreEqual(false, result.ViewData.ModelState.IsValid);
+        }
+
     }
 }

@@ -25,12 +25,12 @@ namespace WebUI.Infrastructure
         {
             kernel.Bind<IGuitarRepository>().To<EFGuitarRepository>();
 
-            EmailSettings enailSettings = new EmailSettings
+            EmailSettings emailSettings = new EmailSettings
             {
                 WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
             };
-            kernel.Bind < IOrderProcessor().To<EmailOrderProcessor>()
-                .WithConstrucorArgument("settings", emailSettings);
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
+                .WithConstructorArgument("settings", emailSettings);
         }
         public object GetService(Type serviceType)
         {

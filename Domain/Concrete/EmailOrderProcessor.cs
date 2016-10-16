@@ -28,7 +28,7 @@ namespace Domain.Concrete
         {
             emailSettings = settings;
         }
-        public void ProcessorOrder(Cart cart, ShippingDetails shippingDetails)
+        public void ProcessOrder(Cart cart, ShippingDetails shippingDetails)
         {
             using(var smtpClien = new SmtpClient())
             {

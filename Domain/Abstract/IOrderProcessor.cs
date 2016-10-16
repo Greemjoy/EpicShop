@@ -9,6 +9,6 @@ namespace Domain.Abstract
 {
     public interface IOrderProcessor
     {
-        void ProcessorOrder(Cart cart, ShippingDetails shippingDetails);
+        void ProcessOrder(Cart cart, ShippingDetails shippingDetails);
     }
 }

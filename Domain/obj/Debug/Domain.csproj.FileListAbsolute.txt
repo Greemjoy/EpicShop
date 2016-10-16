@@ -42,4 +42,3 @@ C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.Dep
 C:\Users\Gref\Documents\GitHub\EpicShop\Domain\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Gref\Documents\GitHub\EpicShop\Domain\obj\Debug\Domain.dll
 C:\Users\Gref\Documents\GitHub\EpicShop\Domain\obj\Debug\Domain.pdb
-C:\Users\Gref\Documents\GitHub\EpicShop\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
