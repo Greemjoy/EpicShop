@@ -156,6 +156,22 @@ namespace UnitTests
             Assert.AreEqual("", result.ViewName);
             Assert.AreEqual(false, result.ViewData.ModelState.IsValid);
         }
+        public void Connot_Checkout_Invalid_ShippingDetails()
+        {
+            Mock<IOrderProcessor> mock = new Mock<IOrderProcessor>();
+            Cart cart = new Cart();
+            cart.AddItem(new Guitar(), 1);
+
+            CartController controller = new CartController(null, mock.Object);
+            controller.ModelState.AddModelError("error", "error");
+
+            ViewResult result = controller.Checkout(cart, new ShippingDetails());
+
+            mock.Verify(m => m.ProcessOrder(It.IsAny<Cart>(), It.IsAny<ShippingDetails>()), Times.Never());
+
+            Assert.AreEqual("", result.ViewName);
+            Assert.AreEqual(false, result.ViewData.ModelState.IsValid);
+        }
 
     }
 }
