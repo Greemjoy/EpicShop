@@ -2,6 +2,11 @@
     margin-bottom: 5px;
 }
 
+#cartTable td {
+    vertical-align:middle;
+
+}
+
 .field-validation-error{
     color:#f00;
 }
