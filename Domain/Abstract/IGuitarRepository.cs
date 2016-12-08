@@ -10,5 +10,6 @@ namespace Domain.Abstract
     public interface IGuitarRepository
     {
         IEnumerable<Guitar> Guitars { get; }
+        void SaveGuitar(Guitar gutiar);     
     }
 }

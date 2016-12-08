@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Domain.Entities.Guitar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Guitar List
+    </div>
+
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-right">
+                    @Html.DisplayNameFor(model => model.GuitarId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Author)
+                </th>
+                <th class="text-right">
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th class="text-center">
+                    Действия
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-right">
+                        @Html.DisplayFor(modelItem => item.GuitarId)
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.Name, "Edit", new { item.GuitarId })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td class="text-right">
+                        @item.Price.ToString("# USD")
+                    </td>
+                    <td class="text-center">
+                        @using (Html.BeginForm("Delete", "Admin"))
+                        {
+                            @Html.Hidden("GuitarId", item.GuitarId)
+                            <input type="submit" class="btn btn-default btn-xs" value="Delete" />
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <div class="panel-footer">
+        @Html.ActionLink("Add", "Create", null, new { @class = "btn btn-default" })
+    </div>
+</div>
