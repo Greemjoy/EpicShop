@@ -1,30 +1,35 @@
-﻿#price{
+﻿#price {
     margin-bottom: 5px;
 }
 
 #cartTable td {
-    vertical-align:middle;
-
+    vertical-align: middle;
 }
 
-.field-validation-error{
-    color:#f00;
+.navbar-right {
+    float: right !important;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
-.field-validation-valid{
-    display:none;
+.field-validation-error {
+    color: #f00;
 }
 
-.input-validation-error{
-    border:1px solid #f00;
-    background-color:#fee;
+.field-validation-valid {
+    display: none;
 }
 
-.validation-summary-errors{
-    font-weigh:bold;
-    color:#f00;
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
 }
 
-.validation-summary-valid{
-    display:none;
+.validation-summary-errors {
+    font-weigh: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
 }

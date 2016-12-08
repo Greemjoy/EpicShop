@@ -21,7 +21,7 @@ namespace WebUI.Controllers
                 .Select(guitar => guitar.Type)
                 .Distinct()
                 .OrderBy(x => x);
-            return PartialView(types);
+            return PartialView("FlexMenu", types);
         }
     }
 }
